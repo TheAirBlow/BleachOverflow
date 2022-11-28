@@ -56,7 +56,8 @@
     "MixinSharedConstants",
     "MixinSoundSystem",
     "MixinTitleScreen",
-    "MixinWorldRenderer"
+    "MixinWorldRenderer",
+    "MixinClientPlayNetworkHandler"
   ],
   "mixinPriority" : 899,
   "injectors": {
