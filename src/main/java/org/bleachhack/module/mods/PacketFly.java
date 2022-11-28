@@ -36,8 +36,7 @@ public class PacketFly extends Module {
 				new SettingSlider("HSpeed", 0.05, 2, 0.5, 2).withDesc("The horizontal speed."),
 				new SettingSlider("VSpeed", 0.05, 2, 0.5, 2).withDesc("The vertical speed."),
 				new SettingSlider("Fall", 0, 40, 20, 0).withDesc("How often to fall (antikick)."),
-				new SettingToggle("Packet Cancel", false).withDesc("Cancel rubberband packets clientside."),
-				new SettingToggle("Send Invalid", false).withDesc("Send invalid movement packet after valid."));
+				new SettingToggle("Packet Cancel", false).withDesc("Cancel rubberband packets clientside."));
 	}
 
 	@Override
@@ -149,10 +148,6 @@ public class PacketFly extends Module {
 
 			mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(
 					mc.player.getX() + moveVec.x, mc.player.getY() - 420.69, mc.player.getZ() + moveVec.z, true));
-
-			if (getSetting(5).asToggle().getState()) { 
-				mc.player.updatePosition(mc.player.getX(), mc.player.getY() - 10, mc.player.getZ());
-			}
 		}
 	}
 

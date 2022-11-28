@@ -99,7 +99,6 @@
     "Zoom",
     "RobotMove",
     "WorldBorder",
-    "GameMode",
     "SlowMove"
   ]
 }
