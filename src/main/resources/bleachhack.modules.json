@@ -96,6 +96,10 @@
     "Trajectories",
     "UI",
     "Xray",
-    "Zoom"
+    "Zoom",
+    "RobotMove",
+    "WorldBorder",
+    "GameMode",
+    "SlowMove"
   ]
 }

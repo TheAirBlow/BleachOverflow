@@ -9,10 +9,15 @@
 package org.bleachhack.mixin;
 
 import net.minecraft.network.PacketCallbacks;
+import net.minecraft.network.packet.c2s.play.PlayerInputC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;
 import org.bleachhack.BleachHack;
 import org.bleachhack.command.Command;
 import org.bleachhack.command.CommandManager;
 import org.bleachhack.event.events.EventPacket;
+import org.bleachhack.module.ModuleManager;
+import org.bleachhack.module.mods.RobotMove;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -59,6 +64,11 @@ public class MixinClientConnection {
 			}
 
 			CommandManager.allowNextMsg = false;
+		}
+		if (ModuleManager.getModule(RobotMove.class).isEnabled() && packet instanceof PlayerMoveC2SPacket) {
+			var move = (PlayerMoveC2SPacket)packet;
+			move.x = Math.round(move.x * 100.0) / 100.0;
+			move.z = Math.round(move.z * 100.0) / 100.0;
 		}
 
 		EventPacket.Send event = new EventPacket.Send(packet);

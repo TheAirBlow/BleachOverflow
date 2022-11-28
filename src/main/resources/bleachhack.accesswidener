@@ -131,6 +131,10 @@ mutable       field    net/minecraft/network/packet/s2c/play/ExplosionS2CPacket 
 
 # PlayerMoveC2SPacket
 # - For AntiHunger, AntiVoid, EntityControl & Flight to change the values in playermove packets
+accessible    field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    x    D
+mutable       field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    x    D
+accessible    field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    z    D
+mutable       field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    z    D
 accessible    field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    y    D
 mutable       field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    y    D
 accessible    field    net/minecraft/network/packet/c2s/play/PlayerMoveC2SPacket    yaw    F
